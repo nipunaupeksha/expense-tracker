@@ -1,17 +1,23 @@
 import { useState } from "react";
-import "./App.css";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [totalSpent, setTotalSpent] = useState(0);
 
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count</button>
-        <p>{count}</p>
-      </div>
-    </>
+    <Card className="w-[350px] m-auto">
+      <CardHeader>
+        <CardTitle>Total Spent</CardTitle>
+        <CardDescription>The total amount you've spent</CardDescription>
+      </CardHeader>
+      <CardContent>{totalSpent}</CardContent>
+    </Card>
   );
 }
 
