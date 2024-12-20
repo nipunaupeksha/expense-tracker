@@ -2,14 +2,7 @@ import { createRootRoute, Link, Outlet } from "@tanstack/react-router";
 // import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 
 export const Route = createRootRoute({
-  component: () => (
-    <>
-      <NavBar />
-      <hr />
-      <Outlet />
-      {/* <TanStackRouterDevtools /> */}
-    </>
-  ),
+  component: Root,
 });
 
 function NavBar() {
@@ -21,6 +14,23 @@ function NavBar() {
       <Link to="/about" className="[&.active]:font-bold">
         About
       </Link>
+      <Link to="/expenses" className="[&.active]:font-bold">
+        Expenses
+      </Link>
+      <Link to="/create-expense" className="[&.active]:font-bold">
+        Create Expenses
+      </Link>
     </div>
+  );
+}
+
+function Root() {
+  return (
+    <>
+      <NavBar />
+      <hr />
+      <Outlet />
+      {/* <TanStackRouterDevtools /> */}
+    </>
   );
 }
