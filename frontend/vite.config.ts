@@ -7,14 +7,14 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(import.meta.dir, "src"),
-      "@server/*": path.resolve(import.meta.dir, "../server"),
+      "@": path.resolve(__dirname, "src"),
+      "@server/*": path.resolve(__dirname, "../server"),
     },
   },
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:8000",
+        target: "http://127.0.0.1:8000",
         changeOrigin: true,
       },
     },
