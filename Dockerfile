@@ -1,5 +1,3 @@
-# trunk-ignore-all(checkov/CKV_DOCKER_3)
-# trunk-ignore-all(checkov/CKV_DOCKER_2)
 # syntax = docker/dockerfile:1
 
 # Adjust BUN_VERSION as desired
@@ -46,5 +44,5 @@ FROM base
 COPY --from=build /app /app
 
 # Start the server by default, this can be overwritten at runtime
-EXPOSE 8000
+EXPOSE 3000
 CMD [ "bun", "run", "start" ]
